@@ -1,6 +1,6 @@
-#http://192.168.1.64:8060/keypress/home
 import os
 import time
+import tkinter as tk
 
 
 class Roku:
@@ -184,6 +184,18 @@ class Roku:
 
 my_device = Roku("192.168.1.64", "8060")
 
+window = tk.Tk()
 
+left = tk.Button(text='left', command=my_device.left())
+right = tk.Button(text='right',command=my_device.right())
+up = tk.Button(text='up', command=my_device.up())
+down = tk.Button(text='down', command=my_device.down())
+home = tk.Button(text='home', command=my_device.roku_home())
 
-my_device.select()
+left.pack()
+right.pack()
+up.pack()
+down.pack()
+home.pack()
+
+window.mainloop()
