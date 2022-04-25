@@ -18,6 +18,10 @@ class Gui:
         self.forward = tk.Button(self.frame, text='forward', command=self.device.fast_forward)
         self.select = tk.Button(self.frame, text='select', command=self.device.select)
 
+        self.volume_up = tk.Button(self.frame, text='volume up', command=self.device.roku_volume_up)
+        self.volume_down = tk.Button(self.frame, text='volume down', command=self.device.roku_volume_down)
+        self.mute = tk.Button(self.frame, text='mute', command=self.device.roku_mute_unmute)
+
         self.up.grid(row=0, columnspan=2, pady=10, ipady=20, ipadx=20)
         self.left.grid(row=1,  pady=10, ipady=20, ipadx=20)
         self.right.grid(row=1, column=1, pady=10, ipady=20, ipadx=20)
@@ -26,6 +30,10 @@ class Gui:
         self.rev.grid(row=3, column=0,  pady=10, ipady=20, ipadx=20)
         self.forward.grid(row=3, column=1,  pady=10, ipady=20, ipadx=20)
         self.select.grid(row=5, columnspan=2,  pady=10, ipady=20, ipadx=20)
+
+        self.volume_up.grid(row=6, column=0,  pady=10, ipady=20, ipadx=20)
+        self.volume_down.grid(row=6, column=1,  pady=10, ipady=20, ipadx=20)
+        self.mute.grid(row=7, columnspan=2,  pady=10, ipady=20, ipadx=20)
 
         self.frame.pack(expand=True)
 
