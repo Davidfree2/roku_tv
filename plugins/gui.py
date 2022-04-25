@@ -5,7 +5,7 @@ class Gui:
     def __init__(self, window, device):
         self.window = window
         self.title = self.window.title("Roku Remote")
-        self.frame = tk.Frame(self.window)
+        self.frame = tk.Frame(self.window, bg='white')
 
         self.device = device
 
@@ -19,13 +19,13 @@ class Gui:
         self.select = tk.Button(self.frame, text='select', command=self.device.select)
 
         self.up.grid(row=0, columnspan=2, pady=10, ipady=20, ipadx=20)
-        self.left.grid(row=1)
-        self.right.grid(row=1, column=1)
-        self.down.grid(row=2, columnspan=2, pady=10)
-        self.home.grid(row=4, columnspan=2, pady=10)
-        self.rev.grid(row=3, column=0, pady=15)
-        self.forward.grid(row=3, column=1)
-        self.select.grid(row=5, columnspan=2, pady=10)
+        self.left.grid(row=1,  pady=10, ipady=20, ipadx=20)
+        self.right.grid(row=1, column=1, pady=10, ipady=20, ipadx=20)
+        self.down.grid(row=2, columnspan=2,  pady=10, ipady=20, ipadx=20)
+        self.home.grid(row=4, columnspan=2,  pady=10, ipady=20, ipadx=20)
+        self.rev.grid(row=3, column=0,  pady=10, ipady=20, ipadx=20)
+        self.forward.grid(row=3, column=1,  pady=10, ipady=20, ipadx=20)
+        self.select.grid(row=5, columnspan=2,  pady=10, ipady=20, ipadx=20)
 
         self.frame.pack(expand=True)
 
