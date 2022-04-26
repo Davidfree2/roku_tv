@@ -170,3 +170,14 @@ class Roku:
         except:
             print("failed. Is the ip address and port correct? is curl installed on machine?")
 
+    def back(self):
+        print("executing-------")
+        try:
+            roku_command = f'''curl -d '' "http://{self.ip_address}:{self.port}/keypress/Back"'''
+            os.system(roku_command)
+            print('success!')
+        except:
+            print("failed. Is the ip address and port correct? is curl installed on machine?")
+
+
+

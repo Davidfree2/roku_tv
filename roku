@@ -1,4 +1,7 @@
 #!/usr/env/python3
+#this is a single file that can be moved to your .local/bin folder.
+#from there you can use chmod +x to make it executable and call it from anywhere in your file system
+#just use the 'roku' command to run it from anywhere
 
 
 
@@ -174,6 +177,15 @@ class Roku:
         except:
             print("failed. Is the ip address and port correct? is curl installed on machine?")
 
+    def back(self):
+        print("executing-------")
+        try:
+            roku_command = f'''curl -d '' "http://{self.ip_address}:{self.port}/keypress/Back"'''
+            os.system(roku_command)
+            print('success!')
+        except:
+            print("failed. Is the ip address and port correct? is curl installed on machine?")
+
 class Gui:
     def __init__(self, window, device):
         self.window = window
@@ -194,6 +206,7 @@ class Gui:
         self.volume_up = tk.Button(self.frame, text='volume up', command=self.device.roku_volume_up)
         self.volume_down = tk.Button(self.frame, text='volume down', command=self.device.roku_volume_down)
         self.mute = tk.Button(self.frame, text='mute', command=self.device.roku_mute_unmute)
+        self.back = tk.Button(self.frame, text='back', command=self.device.back)
 
         self.up.grid(row=0, columnspan=2, pady=10, ipady=20, ipadx=20)
         self.left.grid(row=1,  pady=10, ipady=20, ipadx=20)
@@ -207,6 +220,7 @@ class Gui:
         self.volume_up.grid(row=6, column=0,  pady=10, ipady=20, ipadx=20)
         self.volume_down.grid(row=6, column=1,  pady=10, ipady=20, ipadx=20)
         self.mute.grid(row=7, columnspan=2,  pady=10, ipady=20, ipadx=20)
+        self.back.grid(row=8, columnspan=2,  pady=10, ipady=20, ipadx=20)
 
         self.frame.pack(expand=True)
 
