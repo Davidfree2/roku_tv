@@ -5,7 +5,7 @@ class Gui:
     def __init__(self, window, device):
         self.window = window
         self.title = self.window.title("Roku Remote")
-        self.frame = tk.Frame(self.window, bg='white')
+        self.frame = tk.Frame(self.window, bg='#662d91')
 
         self.device = device
 
