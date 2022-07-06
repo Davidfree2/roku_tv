@@ -183,6 +183,7 @@ class Roku:
 
 def cli_args():
     try:
+        #make sure to change this depending on your device
         my_device = Roku("192.168.1.64", "8060")
 
         foo = {

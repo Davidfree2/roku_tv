@@ -230,6 +230,7 @@ class Gui:
 
 
 
+#edit this for your device 
 my_device = Roku("192.168.1.64", "8060")
 root = tk.Tk()
 app = Gui(root, my_device)
